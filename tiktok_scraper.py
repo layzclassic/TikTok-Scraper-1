@@ -67,7 +67,7 @@ def load_driver():
         return webdriver.Chrome(executable_path="/usr/bin/chromedriver", options=options)
     ## When on linux load LINUX DRIVER
     if 'windows' in osID:
-        return webdriver.Chrome(executable_path="D:\GEPHI\ARQUIVOSRLINUX\homeR\chromedriver.exe", options=options)
+        return webdriver.Chrome(executable_path=r"C:\Users\t490s\Documents\GitHub\TikTok-Scraper-1\webdriver\chromedriver.exe", options=options)
 
 def main(driver,keyword):
     if '#' in keyword:
@@ -212,9 +212,9 @@ if __name__ == '__main__':
     print('  1. Do not close this terminal window')
     print('  2. A browser screen will open with TikTok login')
 
-    driver.get("https://www.tiktok.com")
-    time.sleep(.2)
-
+    driver.get("https://www.tiktok.com/foryou?lang=en")
+    time.sleep(40)
+    """
     login_btn = WebDriverWait(driver, 10).until(ec.visibility_of_element_located((By.XPATH,".//*[@data-e2e='top-login-button']")))
     login_btn.click()
     user_login = WebDriverWait(driver, 10).until(ec.visibility_of_element_located((By.XPATH,"//*[contains(text(), 'Use phone / email / username')]")))
@@ -222,15 +222,15 @@ if __name__ == '__main__':
     username = WebDriverWait(driver, 10).until(ec.visibility_of_element_located((By.XPATH,"//*[contains(text(), 'Log in with email or username')]")))
     username.click()
     user = WebDriverWait(driver, 10).until(ec.visibility_of_element_located((By.XPATH,".//*[@name='username']")))
-    user.send_keys(os.getenv('username'))
+    user.send_keys(os.getenv('username')) #username
     password = WebDriverWait(driver, 10).until(ec.visibility_of_element_located((By.XPATH,".//*[@type='password']")))
-    password.send_keys(os.getenv('password'))
+    password.send_keys(os.getenv('password')) #password
     login = WebDriverWait(driver, 10).until(ec.visibility_of_element_located((By.XPATH,".//*[@class='e1w6iovg0 tiktok-15aypwy-Button-StyledButton ehk74z00']")))
     login.click()
-
+"""
     print(f'  3. {Fore.RED}Start runing scraper setup - If asked, perform human authentication{Style.RESET_ALL}')
 
-    time.sleep(.5)
+    time.sleep(20)
 
     loged = 'False'
     while not loged:

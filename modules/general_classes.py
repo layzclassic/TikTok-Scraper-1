@@ -29,7 +29,7 @@ class scrape:
         self.commentsCount = soup.find(tiktok.commentsCount.element, {tiktok.commentsCount.attribute : tiktok.commentsCount.attval}).text
         # self.comments = soup.findAll("div", {"class" : "tiktok-16r0vzi-DivCommentItemContainer eo72wou0"})
         self.comments = soup.findAll(tiktok.comments.element, {tiktok.comments.attribute : tiktok.comments.attval})
-
+        """
         # self.commentUser = [comment.find('a')['href'].replace('/','') for comment in self.comments]
         self.commentUser = [comment.find(tiktok.commentUser.element)['href'].replace('/','') for comment in self.comments]
 
@@ -44,3 +44,4 @@ class scrape:
 
         self.commentLikes = [comment.find("span", {"data-e2e" : "comment-like-count"}).text for comment in self.comments]
         # self.commentLikes = [comment.find(tiktok.commentLikes.element, {tiktok.commentLikes.attribute : tiktok.commentLikes.attval}).text for comment in self.comments]
+"""
